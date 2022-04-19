@@ -30,7 +30,25 @@ public class BTree <T extends Comparable<T>> {
             head = head.next;
         }
     }
+    /**
+     * Single Element Node
+     * @param <T>
+     */
+    private class Element<T>{
+        private T data;
+        //left sub tree pointer
+        private Node left;
+        //right sub tree pointer
+        private Node right;
+        public Element(T data){
+            this.data=data;
+        }
+        @Override
+        public String toString() {
+            return "Element data:" + data + ", left pointer =" + left + ", right pointer=" + right + "";
+        }
 
+    }
     /**
      * tree node
      * @author Administrator
@@ -69,25 +87,7 @@ public class BTree <T extends Comparable<T>> {
         }
     }
 
-    /**
-     * Single Element Node
-     * @param <T>
-     */
-    private class Element<T>{
-        private T data;
-        //left sub tree pointer
-        private Node left;
-        //right sub tree pointer
-        private Node right;
-        public Element(T data){
-            this.data=data;
-        }
-        @Override
-        public String toString() {
-            return "Element data:" + data + ", left pointer =" + left + ", right pointer=" + right + "";
-        }
 
-    }
 
     public boolean add(T t){
       
